@@ -134,3 +134,20 @@ export function executeWork(employee: Director | Teacher): string {
   }
   return (employee as Teacher).workTeacherTasks();
 }
+
+/** Defines possible subjects for teaching. */
+export type Subjects = 'Math' | 'History';
+
+/**
+ * Determines the subject to teach based on the provided todayClass.
+ * @param todayClass - The subject for the class today.
+ * @returns A string indicating the subject being taught.
+ */
+export function teachClass(todayClass: Subjects): string {
+  if (todayClass === 'Math') {
+    return 'Teaching Math';
+  }
+  if (todayClass === 'History') {
+    return 'Teaching History';
+  }
+}
