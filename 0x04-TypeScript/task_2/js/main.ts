@@ -113,3 +113,24 @@ export function createEmployee(salary: number | string): Director | Teacher {
   }
   return new Director();
 }
+
+/**
+ * Checks if the provided employee is an instance of the Director class.
+ * @param employee - The employee to check.
+ * @returns True if the employee is a director, otherwise false.
+ */
+export function isDirector(employee: Director | Teacher): boolean {
+  return employee instanceof Director;
+}
+
+/**
+ * Executes work tasks based on the type of employee.
+ * @param employee - The employee whose work tasks are to be executed.
+ * @returns The result of the executed task.
+ */
+export function executeWork(employee: Director | Teacher): string {
+  if (isDirector(employee)) {
+    return (employee as Director).workDirectorTasks();
+  }
+  return (employee as Teacher).workTeacherTasks();
+}
