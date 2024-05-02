@@ -3,27 +3,27 @@ const calculateNumber = require('./1-calcul');
 
 describe('calculateNumber', () => {
   describe('type == "SUM"', () => {
-    it('equal positive numbers', () => {
+    it('equal positive numbers a and b are positive', () => {
       assert.strictEqual(calculateNumber('SUM', 2.0, 2.0), 4);
     });
 
-    it('equal positive numbers (alternate)', () => {
+    it('equal positive numbers (alternate) a and b are positive', () => {
       assert.strictEqual(calculateNumber('SUM', 2.3, 1.8), 4);
     });
 
-    it('equal negative numbers', () => {
+    it('equal negative numbers a and b are negative', () => {
       assert.strictEqual(calculateNumber('SUM', -2.0, -2.0), -4);
     });
 
-    it('equal negative numbers (alternate)', () => {
+    it('equal negative numbers (alternate) a and b are negative', () => {
       assert.strictEqual(calculateNumber('SUM', -2.3, -1.8), -4);
     });
 
-    it('negative and positive numbers', () => {
+    it('negative and positive numbers  a is negative and b is positive but absolute value are equal', () => {
       assert.strictEqual(calculateNumber('SUM', -2.0, 2.0), 0);
     });
 
-    it('positive and negative numbers', () => {
+    it('positive and negative numbers a is positive and b is negative but absolute value are equal', () => {
       assert.strictEqual(calculateNumber('SUM', 2.0, -2.0), 0);
     });
 
@@ -33,15 +33,15 @@ describe('calculateNumber', () => {
   });
 
   describe('type == "SUBTRACT"', () => {
-    it('equal positive numbers', () => {
+    it('equal positive numbers a and b are equal and positive', () => {
       assert.strictEqual(calculateNumber('SUBTRACT', 2.0, 2.0), 0);
     });
 
-    it('equal positive numbers (alternate)', () => {
+    it('equal positive numbers (alternate) a and b are not equal but positive', () => {
       assert.strictEqual(calculateNumber('SUBTRACT', 2.3, 1.8), 0);
     });
 
-    it('equal negative numbers', () => {
+    it('equal negative numbers a and b are equal and negative', () => {
       assert.strictEqual(calculateNumber('SUBTRACT', -2.0, -2.0), 0);
     });
 
